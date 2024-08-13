@@ -17,3 +17,12 @@ This program works by opening a GUI which can be interacted with by using the `[
 ----------------------------------
 
 ![Borderless](/Images/Borderless.PNG)
+
+----------------------------------
+
+# How To Run
+
+1. Check if Python version `python --version` is 3.x or higher
+2. Navigate to the `Rust-Code-Raider-RCR` dir.
+3. Open cmd and run `pip install requirments.txt`
+4. Run the main file using `Python -u RustCodeRaider.py`
