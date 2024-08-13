@@ -10,3 +10,6 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 `[PGDN]`: **Go down one key**.
 
+
+
+[bob](https://github.com/ShortCoolGuy000/Rust-Code-Raider-RCR/Images/Bordered.PNG)
