@@ -12,4 +12,6 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 
 
-![bob](/Images/Bordered.PNG)
+![Borderd](/Images/Bordered.PNG)
+
+![Borderless](/Images/Borderless.png)
