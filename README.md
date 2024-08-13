@@ -22,6 +22,7 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 # How To Run
 
+0?. If you have git install run `git clone `
 1. Check if Python version `python --version` is 3.x or higher
 2. Navigate to the `Rust-Code-Raider-RCR` dir.
 3. Open cmd and run `pip install requirments.txt`.
