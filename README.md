@@ -12,4 +12,4 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 
 
-[bob](https://github.com/ShortCoolGuy000/Rust-Code-Raider-RCR/blob/main/Images/Bordered.PNG)
+[bob](/Images/Bordered.PNG)
