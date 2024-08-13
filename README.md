@@ -12,4 +12,4 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 
 
-[bob](/Images/Bordered.PNG)
+![bob](/Images/Bordered.PNG)
