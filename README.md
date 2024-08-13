@@ -10,8 +10,10 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 `[PGDN]`: **Go down one key**.
 
-
+----------------------------------
 
 ![Borderd](/Images/Bordered.PNG)
 
-![Borderless](/Images/Borderless.png)
+----------------------------------
+
+![Borderless](/Images/Borderless.PNG)
