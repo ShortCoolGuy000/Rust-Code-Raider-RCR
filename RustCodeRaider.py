@@ -91,7 +91,7 @@ class Window():
     
     def type(self):
         try:
-            pyautogui.write(str(self.b[self.ck]))
+            pyautogui.write(str(self.b[self.ck]),0.2)
             self.next()
         except:
             pass
@@ -133,40 +133,14 @@ class Window():
 
     def start_global_key_listener(self):
         listener_thread = threading.Thread(target=self.global_key_listener, daemon=True)
-        backlistener_thread = threading.Thread(target=self.backglobal_key_listener, daemon=True)
-        inslistener_thread = threading.Thread(target=self.insglobal_key_listener, daemon=True)
-        typelistener_thread = threading.Thread(target=self.typeglobal_key_listener, daemon=True)
-        resetlistener_thread = threading.Thread(target=self.resetglobal_key_listener, daemon=True)
         listener_thread.start()
-        inslistener_thread.start()
-        backlistener_thread.start()
-        typelistener_thread.start()
-        resetlistener_thread.start()
 
-    def global_key_listener(self):
-        while True:
-            keyboard.wait("page up") 
-            self.next()
-    
-    def insglobal_key_listener(self):
-        while True:
-            keyboard.wait("insert")  
-            self.ins() 
-
-    def typeglobal_key_listener(self):
-        while True:
-            keyboard.wait("home")
-            self.type() 
-    
-    def backglobal_key_listener(self):
-        while True:
-            keyboard.wait("page down") 
-            self.back()  
-
-    def resetglobal_key_listener(self):
-        while True:
-            keyboard.wait("del") 
-            self.reset() 
+    def start_global_key_listener(self):
+        keyboard.on_press_key("page up", lambda e: self.next())
+        keyboard.on_press_key("insert", lambda e: self.ins())
+        keyboard.on_press_key("home", lambda e: self.type())
+        keyboard.on_press_key("page down", lambda e: self.back())
+        keyboard.on_press_key("del", lambda e: self.reset())
 
 if __name__ == "__main__":
     app = Window()
