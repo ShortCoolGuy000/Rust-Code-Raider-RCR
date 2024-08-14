@@ -1,7 +1,7 @@
 import customtkinter as tk
-import keyboard  # For global key listening
-import threading  # To run the listener in a separate thread
-import os
+import keyboard 
+import threading  
+import pyautogui
 
 tk.set_appearance_mode("dark")
 tk.set_default_color_theme("green")
@@ -87,6 +87,27 @@ class Window():
         else:
             self.root.overrideredirect(False)
         self.root.update()
+
+    
+    def type(self):
+        try:
+            pyautogui.write(str(self.b[self.ck]))
+            self.next()
+        except:
+            pass
+
+    def reset(self):
+        try:
+            self.ck = 0
+            self.keytext.configure(text=self.b[self.ck])
+            try:
+                self.nextkt.configure(text=self.b[self.ck+1])
+                self.numbertk.configure(text=self.ck)
+                self.lastkt.configure(text=self.b[self.ck-1])
+            except:
+                pass
+        except:
+            pass
     
     def back(self):
         if self.ck > 0:
@@ -114,25 +135,38 @@ class Window():
         listener_thread = threading.Thread(target=self.global_key_listener, daemon=True)
         backlistener_thread = threading.Thread(target=self.backglobal_key_listener, daemon=True)
         inslistener_thread = threading.Thread(target=self.insglobal_key_listener, daemon=True)
+        typelistener_thread = threading.Thread(target=self.typeglobal_key_listener, daemon=True)
+        resetlistener_thread = threading.Thread(target=self.resetglobal_key_listener, daemon=True)
         listener_thread.start()
         inslistener_thread.start()
         backlistener_thread.start()
+        typelistener_thread.start()
+        resetlistener_thread.start()
 
     def global_key_listener(self):
         while True:
-            keyboard.wait("page up")  # Wait for "Enter" to be pressed
-            self.next()   # Call the function when "Enter" is pressed
+            keyboard.wait("page up") 
+            self.next()
     
     def insglobal_key_listener(self):
         while True:
-            keyboard.wait("insert")  # Wait for "Enter" to be pressed
+            keyboard.wait("insert")  
             self.ins() 
+
+    def typeglobal_key_listener(self):
+        while True:
+            keyboard.wait("home")
+            self.type() 
     
     def backglobal_key_listener(self):
         while True:
-            keyboard.wait("page down")  # Wait for "Enter" to be pressed
-            self.back()   # Call the function when "Enter" is pressed
+            keyboard.wait("page down") 
+            self.back()  
 
+    def resetglobal_key_listener(self):
+        while True:
+            keyboard.wait("del") 
+            self.reset() 
 
 if __name__ == "__main__":
     app = Window()
