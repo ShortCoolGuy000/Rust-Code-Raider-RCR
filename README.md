@@ -10,7 +10,7 @@ This program works by opening a GUI which can be interacted with by using the `[
 
 `[PGDN]`: **Go down one key**.
 
-`[INS]`: **Automatically type in the current code**.
+`[HOME]`: **Automatically type in the current code**.
 
 `[DEL]`: **Reset the GUI**.
 
